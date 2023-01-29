@@ -119,6 +119,8 @@ $(document).ready(function () {
             temperatureEl.html(((response.main.temp - 273.15) * 1.8 + 32).toFixed(1));
             humidityEl.text(response.main.humidity);
             windEl.text((response.wind.speed * 2.237).toFixed(1));
+            // uvIndexEl.text((response.clouds.all));
+
 
             // Call OpenWeather API OneCall with lat and lon to get the UV index and 5 day forecast
             let lat = response.coord.lat;
@@ -127,6 +129,7 @@ $(document).ready(function () {
             $.ajax({
                 url: queryURLAll,
                 method: 'GET'
+                
             }).then(function (response) {
                 let uvIndex = response.current.uvi;
                 let uvColor = setUVIndexColor(uvIndex);
@@ -199,89 +202,3 @@ $(document).ready(function () {
     displayLastSearchedCity();
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let input = document.querySelector("input")
-
-
-
-// console.log("Hello World");
-// $("button").on("click", function(){
-
-//     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q="+ input + "&appid=a461925d79fc440221121b90fd18ec1c";
-
-//     $.ajax({
-//         url: queryURL,
-//         method: "GET"
-//     }).then(function(response) {
-//         $("forecast").empty();
-
-//         var myResults = response.data;
-        
-
-//         for (var i = 0; i= myResults.length; i++){
-
-//             var resultDiv = $("<div>");
-
-//             var temp = myResults[i].temp;
-//             var wind = myResults[i].wind;
-//             var humidity = myResults[i].humidity;
-
-//             var p = $("<p>").text("temp: " + temp);
-//             var p = $("<p>").text("temp: " + wind);
-//             var p = $("<p>").text("temp: " + humidity);
-
-//             resultDiv.prepend(p);
-
-//             $("forecast").prepend(resultDiv);
-//         }
-
-//     });
-
-
-
-// });
-
-// // var mySearch = $(this).attr("form-input");
-// // var mySearch = "london"
