@@ -24,7 +24,7 @@ Requires no installation,
 
 To deploy this project run
 
-click on the url ==> 
+click on the url ==> https://great-kiola.github.io/Weather_Dashboard/
 
 ## License
 
