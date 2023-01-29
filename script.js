@@ -120,7 +120,6 @@ $(document).ready(function () {
             temperatureEl.html(((response.main.temp - 273.15) * 1.8 + 32).toFixed(1));
             humidityEl.text(response.main.humidity);
             windEl.text((response.wind.speed * 2.237).toFixed(1));
-            // uvIndexEl.text((response.clouds.all));
 
 
             // Call OpenWeather API OneCall with lat and lon to get the UV index and 5 day forecast
@@ -146,6 +145,8 @@ $(document).ready(function () {
                         'src', `http://openweathermap.org/img/wn/${currDay.weather[0].icon}.png`).attr('alt', currDay.weather[0].description);
                     $(`div.day-${i} .fiveDay-temp`).text(((currDay.temp.day - 273.15) * 1.8 + 32).toFixed(1));
                     $(`div.day-${i} .fiveDay-humid`).text(currDay.humidity);
+                    $(`div.day-${i} .fiveDay-wind`).text(currDay.wind.speed);
+                    
                 }
             });
         });
