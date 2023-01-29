@@ -13,6 +13,7 @@ $(document).ready(function () {
     const uvIndexEl = $('span#uv-index');
     const cityListEl = $('div.cityList');
 
+
    // Selectors for form elements
    const cityInput = $('#city-input');
 
@@ -38,7 +39,7 @@ $(document).ready(function () {
 
     // Load events from local storage
     function loadCities() {
-        const storedCities = JSON.parse(localStorage.getItem('pastCities'));
+        const storedCities = JSON.parse(localStorage.getItem('pastCities')) || [];
         if (storedCities) {
             pastCities = storedCities;
         }
